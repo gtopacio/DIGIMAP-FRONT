@@ -4,22 +4,11 @@ import axios from 'axios'
 
 export default function Home() {
 
-  const [data, setData] = useState("Empty");
-
-  useEffect(() => {
-    async function getData(){
-      let { data } = await axios.get("/api/hello")
-      if(data){
-        console.log(data)
-        setData(data.name)
-      }
-    }
-    getData()
-  }, [])
-
   return (
-    <div className={styles.container}>
-      {data}
+    <div>
+      <h1 className="text-3xl font-bold underline">
+        Hello world!
+      </h1>
     </div>
   )
 }
