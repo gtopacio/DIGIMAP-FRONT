@@ -23,26 +23,27 @@ export default function Home() {
         headers: { "Content-Type": "multipart/form-data" },
         onUploadProgress: data => { setProgress(Math.round((100 * data.loaded) / data.total)) }
       }
-      formData.append("file", file);
+      formData.append("image", file);
       formData.append("name", "test");
-      let response = await axios.post('/jobs', formData, opt);
-      if(!response.data.id){
+      let { data } = await axios.post('/jobs', formData, opt);
+      if(!data.id){
         throw Error("No Response");
       }
-      router.push(`/j/${id}`);
+      router.push(`/j/${data.id}`);
     }
     catch(e){
+      console.error(e);
       alert('Error');
     }
   }
 
   return (
     <div className='grid place-items-center my-2'>
-      <label class="block mb-2 text-sm font-medium text-gray-900" for="file_input">Upload file</label>
+      <label className="block mb-2 text-sm font-medium text-gray-900" htmlFor="file_input">Upload file</label>
       <input type="file" 
         accept=".jpg"
         onChange={handleChange}
-        class="text-sm
+        className="text-sm
         file:mr-4 file:py-2 file:px-4
         file:rounded-full file:border-0
         file:text-sm file:font-semibold

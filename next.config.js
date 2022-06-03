@@ -1,15 +1,11 @@
-/** @type {import('next').NextConfig} */
-module.exports = () => {
-  const rewrites = () => {
+module.exports = {
+  async redirects() {
     return [
       {
-        source: "/jobs",
-        destination: "http://localhost:8080/jobs",
+        source: '/jobs',
+        destination: 'http://localhost:8080/jobs',
+        permanent: true,
       },
-    ];
-  };
-  return {
-    reactStrictMode: true,
-    rewrites,
-  };
-};
+    ]
+  },
+}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { db } from '../../utils/firebase';
 import { doc, onSnapshot } from 'firebase/firestore';
