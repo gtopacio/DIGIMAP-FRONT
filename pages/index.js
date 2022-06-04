@@ -8,10 +8,15 @@ export default function Home() {
 
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(0);
+  const [traj, setTraj] = useState('swing');
 
   function handleChange(e){
     if(e.target.files && e.target.files[0])
       setFile(e.target.files[0]);
+  }
+
+  function handleTrajChange(e){
+    setTraj(e.target.value);
   }
 
   async function handleSubmit(e){
@@ -25,6 +30,7 @@ export default function Home() {
       }
       formData.append("image", file);
       formData.append("name", "test");
+      formData.append("traj", traj);
       let { data } = await axios.post('/jobs', formData, opt);
       if(!data.id){
         throw Error("No Response");
@@ -50,6 +56,27 @@ export default function Home() {
         file:bg-blue-500 file:text-white
         hover:file:bg-blue-700
       "/>
+
+      <div>
+        <input type="radio" id="swing" name="traj" value="swing" onChange={handleTrajChange} checked={traj=="swing"}/>
+        <label for="swing">Swing</label>
+      </div>
+
+      <div>
+        <input type="radio" id="circle" name="traj" value="circle" onChange={handleTrajChange} checked={traj=="circle"}/>
+        <label for="circle">Circle</label>
+      </div>
+
+      <div>
+        <input type="radio" id="zoom" name="traj" value="zoom" checked={traj=="zoom"} onChange={handleTrajChange}/>
+        <label for="zoom">Zoom</label>
+      </div>
+
+      <div>
+        <input type="radio" id="dolly-zoom" name="traj" value="dolly-zoom" checked={traj=="dolly-zoom"} onChange={handleTrajChange}/>
+        <label for="dolly-zoom">Dolly Zoom</label>
+      </div>
+      
       <button 
         onClick={handleSubmit}
         className="bg-blue-500 hover:bg-blue-700
