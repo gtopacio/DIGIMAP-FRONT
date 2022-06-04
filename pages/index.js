@@ -59,22 +59,22 @@ export default function Home() {
 
       <div>
         <input type="radio" id="swing" name="traj" value="swing" onChange={handleTrajChange} checked={traj=="swing"}/>
-        <label for="swing">Swing</label>
+        <label htmlFor="swing">Swing</label>
       </div>
 
       <div>
         <input type="radio" id="circle" name="traj" value="circle" onChange={handleTrajChange} checked={traj=="circle"}/>
-        <label for="circle">Circle</label>
+        <label htmlFor="circle">Circle</label>
       </div>
 
       <div>
         <input type="radio" id="zoom" name="traj" value="zoom" checked={traj=="zoom"} onChange={handleTrajChange}/>
-        <label for="zoom">Zoom</label>
+        <label htmlFor="zoom">Zoom</label>
       </div>
 
       <div>
         <input type="radio" id="dolly-zoom" name="traj" value="dolly-zoom" checked={traj=="dolly-zoom"} onChange={handleTrajChange}/>
-        <label for="dolly-zoom">Dolly Zoom</label>
+        <label htmlFor="dolly-zoom">Dolly Zoom</label>
       </div>
       
       <button 
