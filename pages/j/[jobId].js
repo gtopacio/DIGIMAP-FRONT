@@ -31,7 +31,23 @@ export default function JobIDPage() {
         return;
     }
 
+    let downloadButton = data.link ? 
+        <a target="_blank" href={data.link} rel="noreferrer">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Download</button>
+        </a> : <></>;
+    
+    let videoPreview = data.link ?
+        <iframe className='aspect-auto'>
+            <source src={data.link} type="video/mp4"/>
+        </iframe> : <></>;
+
     return (
-        <div>{JSON.stringify(data, undefined, 2)}</div>
+        <div>
+            <p>Status: {data.status}</p>
+            <p>Message: {data.message}</p>
+            <p>Trajectory: {data.traj}</p>
+            {downloadButton}
+            {videoPreview}
+        </div>
     )
 }
