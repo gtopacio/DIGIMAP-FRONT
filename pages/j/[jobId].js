@@ -32,7 +32,7 @@ export default function JobIDPage() {
     }
 
     let downloadButton = data.link ? 
-        <a target="_blank" href={data.link}>
+        <a target="_blank" href={data.link} rel="noreferrer">
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Download</button>
         </a> : <></>;
     
