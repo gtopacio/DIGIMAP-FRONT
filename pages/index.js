@@ -74,25 +74,25 @@ export default function Home() {
           file:bg-blue-500 file:text-white
           hover:file:bg-blue-700
         "/>
-          <div class="flex w-5/6 justify-between m-4">
+          <div class="flex w-2/3 justify-between m-4 font-medium">
             <div>
               <input type="radio" id="swing" name="traj" value="swing" onChange={handleTrajChange} checked={traj=="swing"}/>
-              <label htmlFor="swing">Swing</label>
+              <label htmlFor="swing" className="ml-2">Swing</label>
             </div>
 
             <div>
               <input type="radio" id="circle" name="traj" value="circle" onChange={handleTrajChange} checked={traj=="circle"}/>
-              <label htmlFor="circle">Circle</label>
+              <label htmlFor="circle" className="ml-2">Circle</label>
             </div>
 
             <div>
               <input type="radio" id="zoom" name="traj" value="zoom-in" checked={traj=="zoom-in"} onChange={handleTrajChange}/>
-              <label htmlFor="zoom">Zoom</label>
+              <label htmlFor="zoom" className="ml-2">Zoom</label>
             </div>
 
             <div>
               <input type="radio" id="dolly-zoom" name="traj" value="dolly-zoom-in" checked={traj=="dolly-zoom-in"} onChange={handleTrajChange}/>
-              <label htmlFor="dolly-zoom">Dolly Zoom</label>
+              <label htmlFor="dolly-zoom" className="ml-2">Dolly Zoom</label>
             </div>
         </div>
 
