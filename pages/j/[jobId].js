@@ -57,6 +57,8 @@ export default function JobIDPage() {
                     {videoPreview}
                 </div>
             </div>
+
+            {data.progress}
             
             <p>Status: {data.status}</p>
             <p>Message: {data.message}</p>
