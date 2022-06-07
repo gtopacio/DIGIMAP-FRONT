@@ -74,28 +74,53 @@ export default function Home() {
           file:bg-blue-500 file:text-white
           hover:file:bg-blue-700
         "/>
-          <div class="flex w-2/3 justify-between m-4 font-medium">
+          <div class="flex justify-between font-medium">
             <div>
               <input type="radio" id="swing" name="traj" value="swing" onChange={handleTrajChange} checked={traj=="swing"}/>
-              <label htmlFor="swing" className="ml-2">Swing</label>
+              <label htmlFor="swing" className="flex flex-col p-4 border-2 border-gray-400 cursor-pointer mx-2" for="swing">Swing</label>
             </div>
 
             <div>
               <input type="radio" id="circle" name="traj" value="circle" onChange={handleTrajChange} checked={traj=="circle"}/>
-              <label htmlFor="circle" className="ml-2">Circle</label>
+              <label htmlFor="circle" className="flex flex-col p-4 border-2 border-gray-400 cursor-pointer mx-2 " for="circle">Circle</label>
             </div>
 
             <div>
               <input type="radio" id="zoom" name="traj" value="zoom-in" checked={traj=="zoom-in"} onChange={handleTrajChange}/>
-              <label htmlFor="zoom" className="ml-2">Zoom</label>
+              <label htmlFor="zoom" className="flex flex-col p-4 border-2 border-gray-400 cursor-pointer mx-2" for="zoom">Zoom</label>
             </div>
 
             <div>
               <input type="radio" id="dolly-zoom" name="traj" value="dolly-zoom-in" checked={traj=="dolly-zoom-in"} onChange={handleTrajChange}/>
-              <label htmlFor="dolly-zoom" className="ml-2">Dolly Zoom</label>
+              <label htmlFor="dolly-zoom" className="flex flex-col p-4 border-2 border-gray-400 cursor-pointer mx-2" for="dolly-zoom">Dolly Zoom</label>
             </div>
         </div>
 
+        <div class="flex justify-between m-4 font-medium">
+            <div>
+              <div class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-l-full cursor-pointer">
+              <label htmlFor="swing">Swing</label>
+              </div>
+            </div>
+
+            <div>
+              <div class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+              <label htmlFor="swing">Circle</label>
+              </div>
+            </div>
+
+            <div>
+              <div class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+              <label htmlFor="swing">Zoom</label>
+              </div>
+            </div>
+
+            <div>
+              <div class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r-full">
+              <label htmlFor="swing">Dolly Zoom</label>
+              </div>
+            </div>
+        </div>
         <div class="font-medium">
           <label >Preview</label>
         </div>
