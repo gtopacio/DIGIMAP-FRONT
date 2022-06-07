@@ -42,9 +42,22 @@ export default function JobIDPage() {
             <source src={data.link} type="video/mp4"/>
         </iframe> : <></>;
 
+
     return (
         <div>
             <Banner/>
+            <div class="bg-red-400 w-full h-72 flex">
+                <div class="bg-blue-400 w-1/2 h-full flex justify-center">
+                    <h1> 2D </h1>
+                    <img class="max-w-1/2 max-h-36" src={data.pictureLink}></img>
+                </div>
+                
+                <div class="bg-green-400 w-1/2 h-full flex justify-center">
+                    <h1> 2D </h1>
+                    {videoPreview}
+                </div>
+            </div>
+            
             <p>Status: {data.status}</p>
             <p>Message: {data.message}</p>
             <p>Trajectory: {data.traj}</p>
