@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { db } from '../../utils/firebase';
 import { doc, onSnapshot } from 'firebase/firestore';
+import Banner from '../../components/Banner';
 
 export default function JobIDPage() {
     const router = useRouter();
@@ -43,6 +44,7 @@ export default function JobIDPage() {
 
     return (
         <div>
+            <Banner/>
             <p>Status: {data.status}</p>
             <p>Message: {data.message}</p>
             <p>Trajectory: {data.traj}</p>
