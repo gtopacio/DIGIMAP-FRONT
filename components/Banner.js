@@ -6,8 +6,8 @@ export default function Banner() {
                     <div class="flex flex-shrink-0 items-center space-x-4 text-white">
                         <div class="h-10 w-10 rounded-full cursor-pointer bg-gray-200 border-2 border-blue-400"></div>
                         <div class="flex flex-col items-start ">
-                        <div class="text-md font-medium ">GEP's 3D PICTURER</div>
-                        <div class="text-sm font-regular">hehe</div>
+                        <div class="text-3xl font-medium ">3D Picture Converter</div>
+                        <div class="text-sm font-regular">G.E.P. Studios</div>
                         </div>
                     </div>
                 </header>
