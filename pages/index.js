@@ -108,8 +108,8 @@ export default function Home() {
           onClick={handleSubmit}
           className="bg-gray-800 hover:bg-gray-600
         text-white font-bold py-2 px-4 rounded m-4">Submit</button>
-        <div class="w-2/3 bg-gray-200 rounded-full">
-          <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style={{width: progress + "%"}}> {progress}%</div>
+        <div class="w-2/3 bg-gray-300 rounded-full my-2">
+          <div class="bg-gray-800 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style={{width: progress + "%"}}> {progress}%</div>
         </div>
       </div>
     </div>
