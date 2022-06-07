@@ -51,10 +51,10 @@ export default function Home() {
     case "circle": videolink = "../moon_circle.mp4"; break;
     case "swing": videolink = "../moon_swing.mp4"; break;
     case "zoom-in": videolink = "../moon_zoom-in.mp4"; break;
-    case "dolly-zoom-in": videolink = "../zoom_dolly-zoom-in"; break;
+    case "dolly-zoom-in": videolink = "../moon_dolly-zoom-in.mp4"; break;
   }
 
-  let videotag = <video width="600" height="400" controls>
+  let videotag = <video class="rounded-lg"width="600" height="400" controls key={videolink}>
                     <source src={videolink} type="video/mp4"></source>
                 </video>
 
@@ -96,14 +96,13 @@ export default function Home() {
             </div>
         </div>
 
-        <div class="font-medium">
-          <label >Preview</label>
+        <div class="justify-center p-4 rounded-lg bg-gray-800">
+          <label class="flex text-center justify-center font-bold text-white">Preview</label>
+          <div class="flex justify-center m-4 rounded-lg">
+            {videotag}
+          </div>
         </div>
 
-        <div class="flex w-5/6 justify-center m-4">
-          {videotag}
-        </div>
-        
         <button 
           onClick={handleSubmit}
           className="bg-gray-800 hover:bg-gray-600
