@@ -73,26 +73,27 @@ export default function Home() {
           file:text-sm file:font-semibold
           file:bg-gray-800 file:text-white
           hover:file:bg-gray-700 cursor-pointer
+          duration-300
         "/>
           <div class="flex justify-between font-medium my-4">
             <div>
               <input class="hidden" type="radio" id="swing" name="traj" value="swing" onChange={handleTrajChange} checked={traj=="swing"}/>
-              <label htmlFor="swing" className="w-36 flex flex-col p-4 border-2 cursor-pointer rounded-l-full bg-gray-800 text-white font-bold text-center" for="swing">Swing</label>
+              <label htmlFor="swing" className="w-36 flex flex-col p-4 border-2 cursor-pointer rounded-l-full bg-gray-800 text-white font-bold text-center hover:bg-gray-600 duration-300" for="swing">Swing</label>
             </div>
 
             <div>
               <input class="hidden" type="radio" id="circle" name="traj" value="circle" onChange={handleTrajChange} checked={traj=="circle"}/>
-              <label htmlFor="circle" className="w-36 flex flex-col p-4 border-2 cursor-pointer bg-gray-800 text-white font-bold text-center" for="circle">Circle</label>
+              <label htmlFor="circle" className="w-36 flex flex-col p-4 border-2 cursor-pointer bg-gray-800 text-white font-bold text-center hover:bg-gray-600 duration-300" for="circle">Circle</label>
             </div>
 
             <div>
               <input class="hidden" type="radio" id="zoom" name="traj" value="zoom-in" checked={traj=="zoom-in"} onChange={handleTrajChange}/>
-              <label htmlFor="zoom" className="w-36 flex flex-col p-4 border-2 cursor-pointer bg-gray-800 text-white font-bold text-center" for="zoom">Zoom</label>
+              <label htmlFor="zoom" className="w-36 flex flex-col p-4 border-2 cursor-pointer bg-gray-800 text-white font-bold text-center hover:bg-gray-600 duration-300" for="zoom">Zoom</label>
             </div>
 
             <div>
               <input class="hidden" type="radio" id="dolly-zoom" name="traj" value="dolly-zoom-in" checked={traj=="dolly-zoom-in"} onChange={handleTrajChange}/>
-              <label htmlFor="dolly-zoom" className="w-36 flex flex-col p-4 border-2 cursor-pointer rounded-r-full bg-gray-800 text-white font-bold text-center" for="dolly-zoom">Dolly Zoom</label>
+              <label htmlFor="dolly-zoom" className="w-36 flex flex-col p-4 border-2 cursor-pointer rounded-r-full bg-gray-800 text-white font-bold text-center hover:bg-gray-600 duration-300" for="dolly-zoom">Dolly Zoom</label>
             </div>
         </div>
 
@@ -106,9 +107,9 @@ export default function Home() {
         <button 
           onClick={handleSubmit}
           className="bg-gray-800 hover:bg-gray-600
-        text-white font-bold py-2 px-4 rounded m-4">Submit</button>
+        text-white font-bold py-2 px-4 rounded m-4 duration-300">Submit</button>
         <div class="w-2/3 bg-gray-300 rounded-full my-2">
-          <div class="bg-gray-800 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style={{width: progress + "%"}}> {progress}%</div>
+          <div class="bg-gray-800 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full duration-300" style={{width: progress + "%"}}> {progress}%</div>
         </div>
       </div>
     </div>
