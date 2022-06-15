@@ -10,9 +10,9 @@ export default function Banner() {
                             <div class="text-sm font-regular">4egg Studios</div>
                         </div>
                     </div>
-                    <div class="justify-self-end flex flex-row text-white space-x-6">
-                        <div class="text-m font-regular">Home</div>
-                        <div class="text-m font-regular">Acknowledgements</div>
+                    <div class="justify-items-end flex flex-row text-white space-x-6">
+                        <a class="text-m font-regular" href="http://localhost:3000/">Home</a>
+                        <a class="text-m font-regular" href="http://localhost:3000/acknowledgements">Acknowledgements</a>
                     </div>
                 </header>
             </div>
