@@ -6,6 +6,7 @@ import Banner from '../components/Banner';
 
 export default function Home() {
 
+  const [disabled, setDisabled] = useState(false);
   const router = useRouter();
 
   const [file, setFile] = useState(null);
@@ -20,14 +21,14 @@ export default function Home() {
   function handleTrajChange(e){
     setTraj(e.target.value);
   }
-
+  let disabledClassname = disabled? "bg-gray-400 text-white font-bold py-2 px-4 rounded m-1 duration-300": "bg-gray-800 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded m-1 duration-300";
   let submitButton =    <button 
                         onClick={handleSubmit}
-                        className="bg-gray-800 hover:bg-gray-600
-                        text-white font-bold py-2 px-4 rounded m-1 duration-300">Submit</button>
+                        className={disabledClassname} disabled={disabled}>Submit</button>
 
   async function handleSubmit(e){
     e.preventDefault();
+    setDisabled(true);
     setProgress(0);
     try{
       const formData = new FormData();
@@ -48,6 +49,7 @@ export default function Home() {
       console.error(e);
       setProgress(0);
       alert('No File Uploaded');
+      setDisabled(false);
     }
   }
 
