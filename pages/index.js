@@ -7,6 +7,7 @@ import Banner from '../components/Banner';
 export default function Home() {
 
   const [disabled, setDisabled] = useState(false);
+  const [hidden, setHidden] = useState(true)
   const router = useRouter();
 
   const [file, setFile] = useState(null);
@@ -21,14 +22,17 @@ export default function Home() {
   function handleTrajChange(e){
     setTraj(e.target.value);
   }
-  let disabledClassname = disabled? "bg-gray-400 text-white font-bold py-2 px-4 rounded m-1 duration-300": "bg-gray-800 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded m-1 duration-300";
+  let disabledClassname = disabled? "bg-gray-400 text-white font-bold py-2 px-4 rounded duration-300": "bg-gray-800 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded duration-300";
   let submitButton =    <button 
                         onClick={handleSubmit}
                         className={disabledClassname} disabled={disabled}>Submit</button>
 
+  let progressBar = <div className="bg-gray-800 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full duration-300" hidden={hidden} style={{width: progress + "%"}}> {progress}%</div>
+  
   async function handleSubmit(e){
     e.preventDefault();
     setDisabled(true);
+    setHidden(false);
     setProgress(0);
     try{
       const formData = new FormData();
@@ -50,6 +54,7 @@ export default function Home() {
       setProgress(0);
       alert('No File Uploaded');
       setDisabled(false);
+      setHidden(true);
     }
   }
 
@@ -84,7 +89,7 @@ export default function Home() {
           duration-300
         "/>
         <div className="w-1/3 bg-gray-300 rounded-full my-2">
-          <div className="bg-gray-800 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full duration-300" style={{width: progress + "%"}}> {progress}%</div>
+          {progressBar}
         </div>
         {submitButton}
           <div className="flex justify-between font-medium my-4">
