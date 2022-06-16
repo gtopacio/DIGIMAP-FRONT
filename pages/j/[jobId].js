@@ -37,7 +37,7 @@ export default function JobIDPage() {
             <button className="bg-blue-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded m-4 duration-300">Download</button>
         </a> : <button type="button" className="bg-blue-200 text-white font-bold py-2 px-4 rounded m-4" disabled>Download</button>;
     
-    let videoPreview =  <video class="max-h-full" controls>
+    let videoPreview =  <video className="max-h-full" controls>
                             <source src={data.link} type="video/mp4"></source>
                         </video>;
 
@@ -50,33 +50,33 @@ export default function JobIDPage() {
     return (
         <div>
             <Banner/>
-            <div class="grid place-items-center my-2">
+            <div className="grid place-items-center my-2">
 
-                <div class="mb-2">
+                <div className="mb-2">
                     <p>Status: {data.status}</p>
                     <p>Trajectory: {data.traj}</p>
                     {message}
                 </div>
 
-                <div class="w-2/3 justify-center p-4 rounded-lg bg-gray-800">
-                    <div class="w-full flex block mb-2 text-m font-bold text-white">
-                        <p class="w-1/2 grid place-items-center">2D</p>
-                        <p class="w-1/2 grid place-items-center">3D</p>
+                <div className="w-2/3 justify-center p-4 rounded-lg bg-gray-800">
+                    <div className="w-full flex block mb-2 text-m font-bold text-white">
+                        <p className="w-1/2 grid place-items-center">2D</p>
+                        <p className="w-1/2 grid place-items-center">3D</p>
                     </div>
-                    <div class="w-full flex">
-                        <div class="w-1/2 flex flex-col items-center p-2">
-                            <img class="max-h-full" src={data.pictureLink}></img>
+                    <div className="w-full flex">
+                        <div className="w-1/2 flex flex-col items-center p-2">
+                            <img className="max-h-full" src={data.pictureLink}></img>
                         </div>
                         
-                        <div class="w-1/2 flex flex-col items-center p-2">
+                        <div className="w-1/2 flex flex-col items-center p-2">
                             {videoPreview}
                         </div>
                     </div>
                 </div>
 
-                <div class="w-1/2">
-                    <div class="w-full bg-gray-300 rounded-full my-2">
-                        <div class="bg-gray-800 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full duration-300" style={{width: progress + "%"}}> {progress}%</div>
+                <div className="w-1/2">
+                    <div className="w-full bg-gray-300 rounded-full my-2">
+                        <div className="bg-gray-800 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full duration-300" style={{width: progress + "%"}}> {progress}%</div>
                     </div>
                     <p>{data.stage}</p>
                 </div>
