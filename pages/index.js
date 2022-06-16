@@ -41,7 +41,8 @@ export default function Home() {
     }
     catch(e){
       console.error(e);
-      alert('Error');
+      setProgress(0);
+      alert('No File Uploaded');
     }
   }
 
@@ -75,6 +76,13 @@ export default function Home() {
           hover:file:bg-gray-700 cursor-pointer
           duration-300
         "/>
+        <div class="w-1/3 bg-gray-300 rounded-full my-2">
+          <div class="bg-gray-800 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full duration-300" style={{width: progress + "%"}}> {progress}%</div>
+        </div>
+        <button 
+          onClick={handleSubmit}
+          className="bg-gray-800 hover:bg-gray-600
+        text-white font-bold py-2 px-4 rounded m-1 duration-300">Submit</button>
           <div class="flex justify-between font-medium my-4">
             <div>
               <input class="hidden" type="radio" id="swing" name="traj" value="swing" onChange={handleTrajChange} checked={traj=="swing"}/>
@@ -102,14 +110,6 @@ export default function Home() {
           <div class="flex justify-center m-4 rounded-lg">
             {videotag}
           </div>
-        </div>
-
-        <button 
-          onClick={handleSubmit}
-          className="bg-gray-800 hover:bg-gray-600
-        text-white font-bold py-2 px-4 rounded m-4 duration-300">Submit</button>
-        <div class="w-2/3 bg-gray-300 rounded-full my-2">
-          <div class="bg-gray-800 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full duration-300" style={{width: progress + "%"}}> {progress}%</div>
         </div>
       </div>
     </div>
