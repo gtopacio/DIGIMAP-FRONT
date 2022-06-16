@@ -1,4 +1,5 @@
 import Banner from '../components/Banner';
+import Image from 'next/image';
 
 function acknowledgements() {
     return (
@@ -11,7 +12,7 @@ function acknowledgements() {
                 <div className='flex flex-column justify-between relative pt-2'>
                     <div className='flex justify-center items-center'>
                         <a href="https://github.com/vt-vl-lab/3d-photo-inpainting?fbclid=IwAR0nkHpFBYc1buZ5l-f7G7ZH21O29aqqAJCHPkSsxHbQjnQe4skBN_szzBg" rel="noreferrer" target="_blank">
-                            <img alt="Github Link" src="/github-logo.png" width="150" height="100"></img>
+                            <Image alt="Github Link" src="/github-logo.png" width="150" height="100"></Image>
                         </a>
                     </div>
                     <div className='flex flex-col place-items-center pl-16'>
