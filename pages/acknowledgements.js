@@ -10,7 +10,7 @@ function acknowledgements() {
                 <label className="block mb-2 text-xl font-bold text-gray-900 pt-2" >[CVPR 2020] 3D Photography using Context-aware Layered Depth Inpainting</label>
                 <div className='flex flex-column justify-between relative pt-2'>
                     <div className='flex justify-center items-center'>
-                        <a href="https://github.com/vt-vl-lab/3d-photo-inpainting?fbclid=IwAR0nkHpFBYc1buZ5l-f7G7ZH21O29aqqAJCHPkSsxHbQjnQe4skBN_szzBg" target="_blank">
+                        <a href="https://github.com/vt-vl-lab/3d-photo-inpainting?fbclid=IwAR0nkHpFBYc1buZ5l-f7G7ZH21O29aqqAJCHPkSsxHbQjnQe4skBN_szzBg" rel="noreferrer" target="_blank">
                             <img alt="Github Link" src="/github-logo.png" width="150" height="100"></img>
                         </a>
                     </div>
