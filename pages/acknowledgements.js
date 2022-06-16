@@ -6,13 +6,13 @@ function acknowledgements() {
         <div>
             <Banner/>
             <div className='grid place-items-center my-2'>
-                <label className="block mb-2 text-xl font-bold text-gray-900" htmlFor="file_input">Acknowledgements</label>
-                <label className="block mb-2 text-xl font-bold text-gray-900 pt-5" >Source:</label>
-                <label className="block mb-2 text-xl font-bold text-gray-900 pt-2" >[CVPR 2020] 3D Photography using Context-aware Layered Depth Inpainting</label>
+                <label className="block mt-4 text-3xl font-bold text-gray-900 pt-2" htmlFor="file_input">Acknowledgements</label>
+                <label className="block text-xl font-bold text-gray-900 pt-8" >Source:</label>
+                <label className="block mb-2 text-xl font-bold text-gray-900 pt-2 hover:text-cyan-600" ><a href="https://github.com/vt-vl-lab/3d-photo-inpainting?fbclid=IwAR0nkHpFBYc1buZ5l-f7G7ZH21O29aqqAJCHPkSsxHbQjnQe4skBN_szzBg">[CVPR 2020] 3D Photography using Context-aware Layered Depth Inpainting</a></label>
                 <div className='flex flex-column justify-between relative pt-2'>
                     <div className='flex justify-center items-center'>
                         <a href="https://github.com/vt-vl-lab/3d-photo-inpainting?fbclid=IwAR0nkHpFBYc1buZ5l-f7G7ZH21O29aqqAJCHPkSsxHbQjnQe4skBN_szzBg" rel="noreferrer" target="_blank">
-                            <Image alt="Github Link" src="/github-logo.png" width="150" height="100"></Image>
+                            <Image alt="Github Link" src="/github-logo.png" width="150" height="150"></Image>
                         </a>
                     </div>
                     <div className='flex flex-col place-items-center pl-16'>
