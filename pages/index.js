@@ -21,6 +21,11 @@ export default function Home() {
     setTraj(e.target.value);
   }
 
+  let submitButton =    <button 
+                        onClick={handleSubmit}
+                        className="bg-gray-800 hover:bg-gray-600
+                        text-white font-bold py-2 px-4 rounded m-1 duration-300">Submit</button>
+
   async function handleSubmit(e){
     e.preventDefault();
     setProgress(0);
@@ -79,10 +84,7 @@ export default function Home() {
         <div className="w-1/3 bg-gray-300 rounded-full my-2">
           <div className="bg-gray-800 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full duration-300" style={{width: progress + "%"}}> {progress}%</div>
         </div>
-        <button 
-          onClick={handleSubmit}
-          className="bg-gray-800 hover:bg-gray-600
-        text-white font-bold py-2 px-4 rounded m-1 duration-300">Submit</button>
+        {submitButton}
           <div className="flex justify-between font-medium my-4">
             <div>
               <input className="hidden" type="radio" id="swing" name="traj" value="swing" onChange={handleTrajChange} checked={traj=="swing"}/>
