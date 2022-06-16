@@ -24,7 +24,14 @@ export default function JobIDPage() {
     }, [jobId]);
 
     if(loading){
-        return <h1>Loading</h1>
+        return (
+            <div>
+                <Banner/>
+                <div className="grid place-items-center my-10">
+                    <h1 className="text-gray-900 font-bold text-4xl ">Loading...</h1>
+                </div>
+            </div>
+        )
     }
 
     if(!data){
