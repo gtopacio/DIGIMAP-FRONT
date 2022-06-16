@@ -62,7 +62,7 @@ export default function Home() {
     case "dolly-zoom-in": videolink = "../moon_dolly-zoom-in.mp4"; break;
   }
 
-  let videotag = <video className="rounded-lg"width="600" height="400" controls key={videolink}>
+  let videotag = <video className="rounded-lg"width="600" height="400" autoplay muted controls playsinline key={videolink}>
                     <source src={videolink} type="video/mp4"></source>
                 </video>
 
