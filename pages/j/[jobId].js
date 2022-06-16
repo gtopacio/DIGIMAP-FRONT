@@ -37,7 +37,7 @@ export default function JobIDPage() {
             <button className="bg-blue-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded m-4 duration-300">Download</button>
         </a> : <button type="button" className="bg-blue-200 text-white font-bold py-2 px-4 rounded m-4" disabled>Download</button>;
     
-    let videoPreview =  <video className="max-h-full" controls>
+    let videoPreview =  <video className="max-h-full" controls key={data.link}>
                             <source src={data.link} type="video/mp4"></source>
                         </video>;
 
