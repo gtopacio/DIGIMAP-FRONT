@@ -52,12 +52,18 @@ export default function JobIDPage() {
         <p>Message: {data.message}</p>
         : <></>;
 
-    let progress = data.progress ? data.progress : 0;
+    let progress = data.progress ? 
+        <div className="bg-gray-800 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full duration-300" style={{width: data.progress + "%"}}> {data.progress}%</div> 
+        : <></>;
+
+    let url = window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + router.asPath;
 
     return (
         <div>
             <Banner/>
             <div className="grid place-items-center my-2">
+                
+                <button className="bg-green-800 hover:bg-green-600 text-white py-1 px-4 rounded m-2 duration-300" onClick={() => {navigator.clipboard.writeText(url); alert("Link Copied")}}>Copy Link</button>
 
                 <div className="mb-2">
                     <p>Status: {data.status}</p>
@@ -83,7 +89,7 @@ export default function JobIDPage() {
 
                 <div className="w-1/2">
                     <div className="w-full bg-gray-300 rounded-full my-2">
-                        <div className="bg-gray-800 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full duration-300" style={{width: progress + "%"}}> {progress}%</div>
+                        {progress}
                     </div>
                     <p>{data.stage}</p>
                 </div>
