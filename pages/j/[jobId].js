@@ -44,9 +44,11 @@ export default function JobIDPage() {
             <button className="bg-blue-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded m-4 duration-300">Download</button>
         </a> : <button type="button" className="bg-blue-200 text-white font-bold py-2 px-4 rounded m-4" disabled>Download</button>;
     
-    let videoPreview =  <video className="max-h-full" controls key={data.link}>
-                            <source src={data.link} type="video/mp4"></source>
-                        </video>;
+    let videoPreview =  data.link ?
+        <video className="max-h-full" controls key={data.link}>
+            <source src={data.link} type="video/mp4"></source>
+        </video>
+        : <h1 className="text-m font-bold text-gray-400 text-2xl">{data.status}</h1>;
 
     let message = data.message ?
         <p>Message: {data.message}</p>
