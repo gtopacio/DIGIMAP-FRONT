@@ -56,7 +56,7 @@ export default function JobIDPage() {
         <div className="bg-gray-800 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full duration-300" style={{width: data.progress + "%"}}> {data.progress}%</div> 
         : <></>;
 
-    let url = window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + router.asPath;
+    let url = window.location.href;
 
     return (
         <div>
