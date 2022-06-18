@@ -14,7 +14,7 @@ export default function Banner() {
                     </div>
                     <div className="justify-items-end flex flex-row text-white space-x-6">
                         <Link className="text-m font-regular" href="/">Home</Link>
-                        <Link className="text-m font-regular" href="/acknowledgements">Acknowledgements</Li>
+                        <Link className="text-m font-regular" href="/acknowledgements">Acknowledgements</Link>
                     </div>
                 </header>
             </div>
