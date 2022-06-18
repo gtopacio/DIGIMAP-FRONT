@@ -13,8 +13,8 @@ export default function Banner() {
                         </div>
                     </div>
                     <div className="justify-items-end flex flex-row text-white space-x-6">
-                        <a className="text-m font-regular" href="http://localhost:3000/">Home</a>
-                        <a className="text-m font-regular" href="http://localhost:3000/acknowledgements">Acknowledgements</a>
+                        <a className="text-m font-regular" href="/">Home</a>
+                        <a className="text-m font-regular" href="/acknowledgements">Acknowledgements</a>
                     </div>
                 </header>
             </div>
