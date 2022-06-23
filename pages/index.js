@@ -1,9 +1,13 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Banner from '../components/Banner';
+
 
 export default function Home() {
 
+  const [disabled, setDisabled] = useState(false);
+  const [hidden, setHidden] = useState(true)
   const router = useRouter();
 
   const [file, setFile] = useState(null);
@@ -18,9 +22,17 @@ export default function Home() {
   function handleTrajChange(e){
     setTraj(e.target.value);
   }
+  let disabledClassname = disabled? "bg-gray-400 text-white font-bold py-2 px-4 rounded duration-300": "bg-gray-800 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded duration-300";
+  let submitButton =    <button 
+                        onClick={handleSubmit}
+                        className={disabledClassname} disabled={disabled}>Submit</button>
 
+  let progressBar = <div className="bg-gray-800 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full duration-300" hidden={hidden} style={{width: progress + "%"}}> {progress}%</div>
+  
   async function handleSubmit(e){
     e.preventDefault();
+    setDisabled(true);
+    setHidden(false);
     setProgress(0);
     try{
       const formData = new FormData();
@@ -39,49 +51,76 @@ export default function Home() {
     }
     catch(e){
       console.error(e);
-      alert('Error');
+      setProgress(0);
+      alert('No File Uploaded');
+      setDisabled(false);
+      setHidden(true);
     }
   }
 
+  let videolink = "moon_circle.mp4"
+
+  switch(traj){
+    case "circle": videolink = "../moon_circle.mp4"; break;
+    case "swing": videolink = "../moon_swing.mp4"; break;
+    case "zoom-in": videolink = "../moon_zoom-in.mp4"; break;
+    case "dolly-zoom-in": videolink = "../moon_dolly-zoom-in.mp4"; break;
+  }
+
+  let videotag = <video className="rounded-lg"width="600" height="400" loop autoPlay muted controls playsInline key={videolink}>
+                    <source src={videolink} type="video/mp4"></source>
+                </video>
+
+
   return (
-    <div className='grid place-items-center my-2'>
-      <label className="block mb-2 text-sm font-medium text-gray-900" htmlFor="file_input">Upload file</label>
-      <input type="file" 
-        accept=".jpg"
-        onChange={handleChange}
-        className="text-sm
-        file:mr-4 file:py-2 file:px-4
-        file:rounded-full file:border-0
-        file:text-sm file:font-semibold
-        file:bg-blue-500 file:text-white
-        hover:file:bg-blue-700
-      "/>
+    <div>
+      <Banner/>
+      <div className='grid place-items-center my-2'>
+        <label className="block mb-2 text-m font-bold text-gray-900" htmlFor="file_input">Convert image (.jpg) to 3D Photo</label>
+        <input type="file" 
+          accept=".jpg"
+          onChange={handleChange}
+          className="text-sm
+          file:mr-4 file:py-2 file:px-4
+          file:rounded-full file:border-0
+          file:text-sm file:font-semibold
+          file:bg-gray-800 file:text-white
+          hover:file:bg-gray-700 cursor-pointer
+          duration-300
+        "/>
+        <div className="w-1/3 bg-gray-300 rounded-full my-2">
+          {progressBar}
+        </div>
+        {submitButton}
+          <div className="flex justify-between font-medium my-4">
+            <div>
+              <input className="hidden" type="radio" id="swing" name="traj" value="swing" onChange={handleTrajChange} checked={traj=="swing"}/>
+              <label htmlFor="swing" className="w-36 flex flex-col p-4 border-2 cursor-pointer rounded-l-full bg-gray-800 text-white font-bold text-center hover:bg-gray-600 duration-300">Swing</label>
+            </div>
 
-      <div>
-        <input type="radio" id="swing" name="traj" value="swing" onChange={handleTrajChange} checked={traj=="swing"}/>
-        <label htmlFor="swing">Swing</label>
-      </div>
+            <div>
+              <input className="hidden" type="radio" id="circle" name="traj" value="circle" onChange={handleTrajChange} checked={traj=="circle"}/>
+              <label htmlFor="circle" className="w-36 flex flex-col p-4 border-2 cursor-pointer bg-gray-800 text-white font-bold text-center hover:bg-gray-600 duration-300">Circle</label>
+            </div>
 
-      <div>
-        <input type="radio" id="circle" name="traj" value="circle" onChange={handleTrajChange} checked={traj=="circle"}/>
-        <label htmlFor="circle">Circle</label>
-      </div>
+            <div>
+              <input className="hidden" type="radio" id="zoom" name="traj" value="zoom-in" checked={traj=="zoom-in"} onChange={handleTrajChange}/>
+              <label htmlFor="zoom" className="w-36 flex flex-col p-4 border-2 cursor-pointer bg-gray-800 text-white font-bold text-center hover:bg-gray-600 duration-300">Zoom</label>
+            </div>
 
-      <div>
-        <input type="radio" id="zoom" name="traj" value="zoom-in" checked={traj=="zoom-in"} onChange={handleTrajChange}/>
-        <label htmlFor="zoom">Zoom</label>
-      </div>
+            <div>
+              <input className="hidden" type="radio" id="dolly-zoom" name="traj" value="dolly-zoom-in" checked={traj=="dolly-zoom-in"} onChange={handleTrajChange}/>
+              <label htmlFor="dolly-zoom" className="w-36 flex flex-col p-4 border-2 cursor-pointer rounded-r-full bg-gray-800 text-white font-bold text-center hover:bg-gray-600 duration-300">Dolly Zoom</label>
+            </div>
+        </div>
 
-      <div>
-        <input type="radio" id="dolly-zoom" name="traj" value="dolly-zoom-in" checked={traj=="dolly-zoom-in"} onChange={handleTrajChange}/>
-        <label htmlFor="dolly-zoom">Dolly Zoom</label>
+        <div className="justify-center p-4 rounded-lg bg-gray-800">
+          <label className="flex text-center justify-center font-bold text-white">Preview</label>
+          <div className="flex justify-center m-4 rounded-lg">
+            {videotag}
+          </div>
+        </div>
       </div>
-      
-      <button 
-        onClick={handleSubmit}
-        className="bg-blue-500 hover:bg-blue-700
-      text-white font-bold py-2 px-4 rounded">Submit</button>
-      <p>Progress: {progress}/100</p>
     </div>
   )
 }

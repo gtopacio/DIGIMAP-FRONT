@@ -2,13 +2,14 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCCBpTIdmZXuZvKyYdIfGUY-t_JVg-Cemc",
-  authDomain: "digimap-3dp.firebaseapp.com",
-  projectId: "digimap-3dp",
-  storageBucket: "digimap-3dp.appspot.com",
-  messagingSenderId: "386026440323",
-  appId: "1:386026440323:web:cb7f4480f1ae40ca9f7db6"
+  apiKey: "AIzaSyAxtBdMorQo9aQ8xruYtL53tC0L2KBEj-E",
+  authDomain: "digimap-3dp-13228.firebaseapp.com",
+  projectId: "digimap-3dp-13228",
+  storageBucket: "digimap-3dp-13228.appspot.com",
+  messagingSenderId: "621469499940",
+  appId: "1:621469499940:web:b6be52270fb81980a10eb1"
 };
+
 
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
