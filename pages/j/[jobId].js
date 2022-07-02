@@ -61,10 +61,12 @@ export default function JobIDPage() {
 
     let url = window.location.href;
 
+    let headStatus = "(" + data.status + ")";
+
     return (
         <div>
             <Head>
-                <title>Job Number: {data.jobNumber}</title>
+                <title>{headStatus} Job Number: {data.jobNumber}</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             <Banner/>
