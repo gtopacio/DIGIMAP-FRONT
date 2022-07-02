@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import Banner from '../components/Banner';
+import Head from 'next/head';
 
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(0);
   const [traj, setTraj] = useState('swing');
+
 
   function handleChange(e){
     if(e.target.files && e.target.files[0])
@@ -74,6 +76,10 @@ export default function Home() {
 
   return (
     <div>
+      <Head>
+        <title>🥚 4egg Studios 3D Image Converter</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Banner/>
       <div className='grid place-items-center my-2'>
         <label className="block mb-2 text-m font-bold text-gray-900" htmlFor="file_input">Convert image (.jpg) to 3D Photo</label>

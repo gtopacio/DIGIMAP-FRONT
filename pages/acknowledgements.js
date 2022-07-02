@@ -1,9 +1,14 @@
 import Banner from '../components/Banner';
 import Image from 'next/image';
+import Head from 'next/head';
 
 function acknowledgements() {
     return (
         <div>
+            <Head>
+                <title>Acknowledgement</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <Banner/>
             <div className='grid place-items-center my-2'>
                 <label className="block mt-4 text-3xl font-bold text-gray-900 pt-2" htmlFor="file_input">Acknowledgements</label>
