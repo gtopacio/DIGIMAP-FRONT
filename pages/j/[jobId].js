@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { db } from '../../utils/firebase';
 import { doc, onSnapshot } from 'firebase/firestore';
 import Banner from '../../components/Banner';
+import Head from 'next/head';
 
 export default function JobIDPage() {
     const router = useRouter();
@@ -54,7 +55,7 @@ export default function JobIDPage() {
         <p>Message: {data.message}</p>
         : <></>;
 
-    let progress = data.progress ? 
+    let progress = data.progress != null ? 
         <div className="bg-gray-800 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full duration-300" style={{width: data.progress + "%"}}> {data.progress}%</div> 
         : <></>;
 
@@ -62,9 +63,18 @@ export default function JobIDPage() {
 
     return (
         <div>
+            <Head>
+                <title>Job Number: {data.jobNumber}</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <Banner/>
             <div className="grid place-items-center my-2">
-                
+                <div>
+                    This may take awhile...
+                </div>
+                <div className="font-bold">
+                    Job Number: {data.jobNumber}
+                </div>
                 <button className="bg-green-800 hover:bg-green-600 text-white py-1 px-4 rounded m-2 duration-300" onClick={() => {navigator.clipboard.writeText(url); alert("Link Copied")}}>Copy Link</button>
 
                 <div className="mb-2">
