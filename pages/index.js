@@ -77,7 +77,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>🥚 4egg Studios 3D Image Converter</title>
+        <title>4egg Studios 3D Image Converter</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Banner/>
